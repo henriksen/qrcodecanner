@@ -21,8 +21,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Function to set up the video stream
     async function setupVideoStream(cameraId) {
         try {
+            
             const constraints = {
-                video: { deviceId: { exact: cameraId } }
+                video: { facingMode: "environment" },
             };
             const stream = await navigator.mediaDevices.getUserMedia(constraints);
             video.srcObject = stream;
