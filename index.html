@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+        }
+        #video-container {
+            width: 100%;
+            height: auto;
+            border: 1px solid black;
+        }
+        #qr-code-table {
+            margin-top: 20px;
+            width: 50%;
+            border-collapse: collapse;
+        }
+        #qr-code-table th, #qr-code-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="video" autoplay style="width: 100%;"></video>
+        <select id="camera-select"></select>
+    </div>
+    <table id="qr-code-table">
+        <thead>
+            <tr>
+                <th>QR Code Value</th>
+            </tr>
+        </thead>
+        <tbody id="qr-code-body">
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
